@@ -1,0 +1,2 @@
+﻿currentPath=C:\Users\4001184\Desktop\Lil_Test_Folder
+zipName=test.zip

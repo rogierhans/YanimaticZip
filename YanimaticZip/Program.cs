@@ -6,10 +6,10 @@ class Program
 {
     static void Main()
     {
-        string currentPath = @"C:\Users\4001184\Desktop\Lil_Test_Folder";
-        Console.WriteLine("Naam zipfile aub...");
-        string zipPath = currentPath +@"\"+ Console.ReadLine();
-        using (ZipArchive archive = ZipFile.OpenRead(zipPath))
+        var lines = File.ReadAllLines(@".\paths.txt");
+        string currentPath = lines[0].Split('=').Last();
+        string zipPath = lines[1].Split('=').Last();
+        using (ZipArchive archive = ZipFile.OpenRead(currentPath + @"\" + zipPath))
         {
             foreach (ZipArchiveEntry entry in archive.Entries)
             {
